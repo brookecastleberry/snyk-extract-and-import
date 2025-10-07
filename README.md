@@ -1,6 +1,6 @@
 # Snyk Organization Migration Tool
 
-![Example Code](https://via.placeholder.com/573x27/8B5CF6/FFFFFF?text=Example+Code)
+![Snyk OSS Example](https://raw.githubusercontent.com/snyk-labs/oss-images/main/oss-example.jpg)
 
 This project provides scripts to migrate organizations and their targets (repositories) from one Snyk group to another. The full migration process uses these files in addition to the api-import-tool to copy over organizations & targets from a source tenant to a target tenant then reimports projects.
 
