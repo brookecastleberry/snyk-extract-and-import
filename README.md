@@ -21,7 +21,7 @@ The migration tool consists of two Python scripts:
 ### 1. Clone or Download the Project
 
 ```bash
-cd /path/to/snyk-org-project-migration
+cd /path/to/snyk-extract-and-import
 ```
 
 ### 2. Set Up Python Environment
@@ -140,7 +140,7 @@ Use the API Import Tool to import all targets and create projects in the target 
 snyk-api-import import --file=snyk-import-targets.json
 ```
 
-**Post-Import:** Check logs in `/Users/brookecastleberry/snyk-logs` for any project import failures that may need manual attention.
+**Post-Import:** Check logs in `/path/to/snyk-logs` for any project import failures that may need manual attention.
 
 ## File Structure
 
