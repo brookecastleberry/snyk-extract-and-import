@@ -184,22 +184,6 @@ Ensure your Snyk API tokens have the following permissions:
 - Write access to target group
 - Organization creation permissions
 
-## Troubleshooting
-
-### Common Issues
-
-1. **Authentication Errors**
-   - Verify API tokens are correctly set
-   - Check token permissions and expiration
-
-2. **Rate Limiting**
-   - The scripts include pagination and error handling
-   - Add delays between requests if needed
-
-3. **Missing Organizations**
-   - Ensure `snyk-created-orgs.json` is properly formatted
-   - Verify organization IDs match between source and target
-
 ### Debug Mode
 
 Enable verbose logging by modifying the scripts to include debug prints:
