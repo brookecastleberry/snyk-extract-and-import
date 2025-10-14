@@ -1,12 +1,12 @@
-# Snyk Organization Migration Tool
+# Snyk Extract and Import Tool
 
 ![Snyk OSS Example](https://raw.githubusercontent.com/snyk-labs/oss-images/main/oss-example.jpg)
 
-This project provides scripts to migrate organizations and their targets (repositories) from one Snyk group to another. The full migration process uses these files in addition to the api-import-tool to copy over organizations & targets from a source tenant to a target tenant then reimports projects.
+This project provides scripts to extract organizations and targets (repositories) from a source Snyk tenant and import them into a target tenant. The process extracts organization data and target information from the source tenant, then recreates the organizations and imports all targets and their projects into the target tenant.
 
 ## Overview
 
-The migration tool consists of two Python scripts:
+The extraction and import tool consists of two Python scripts:
 1. **`org_extraction.py`** - Extracts organization data from a source Snyk group
 2. **`snyk_extract_targets.py`** - Extracts targets (repositories) from source organizations for import into target organizations
 
@@ -72,11 +72,11 @@ TEMPLATE_ORG_ID = "your-template-org-id"  # Organization in target group to copy
 
 ## How To Run Script
 
-The complete migration process involves 4 steps. Steps 1 & 3 use the Python scripts in this repository, while Steps 2 & 4 use Snyk's API Import Tool to actually create the organizations and import the projects.
+The complete extraction and import process involves 4 steps. Steps 1 & 3 use the Python scripts in this repository, while Steps 2 & 4 use Snyk's API Import Tool to actually create the organizations and import the projects.
 
 ### Step 1: Extract Organizations from Source Tenant
 
-Extract organization data from the source group and prepare for migration.
+Extract organization data from the source tenant and prepare organization definitions for recreation in the target tenant.
 
 **Prerequisites:**
 - Update configuration constants in `org_extraction.py`:
@@ -94,9 +94,9 @@ python3 org_extraction.py
 
 **Important:** Keep the source default organization from the file. Make sure the target group's default organization name matches the source group's default organization name so targets map properly (names should match by default).
 
-### Step 2: Create Shell Organizations in Target Tenant
+### Step 2: Create Organizations in Target Tenant
 
-Use Snyk's API Import Tool to create the shell organizations in the target tenant.
+Use Snyk's API Import Tool to recreate the organizations in the target tenant.
 
 **Terminal Commands:**
 ```bash
